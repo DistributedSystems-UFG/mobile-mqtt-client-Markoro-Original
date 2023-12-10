@@ -17,8 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String EXTRA_MESSAGE = "com.example.basicandroidmqttclient.MESSAGE";
-    public static final String brokerURI = "3.223.10.115";
+    public static final String brokerURI = "44.215.73.181";
 
     Activity thisActivity;
     TextView subMsgTextView;
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     /** Called when the user taps the Send button */
     public void publishMessage(View view) {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText topicName = (EditText) findViewById(R.id.editTextTopicName);
+        String topicName = "Unidade";
         EditText value = (EditText) findViewById(R.id.editTextValue);
 
         Mqtt5BlockingClient client = Mqtt5Client.builder()
@@ -45,15 +44,13 @@ public class MainActivity extends AppCompatActivity {
 
         client.connect();
         client.publishWith()
-                .topic(topicName.getText().toString())
+                .topic(topicName.toString())
                 .qos(MqttQos.AT_LEAST_ONCE)
                 .payload(value.getText().toString().getBytes())
                 .send();
         client.disconnect();
 
-        String message = topicName.getText().toString() + " " + value.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+        String message = topicName.toString() + " " + value.getText().toString();
     }
 
     public void sendSubscription(View view) {

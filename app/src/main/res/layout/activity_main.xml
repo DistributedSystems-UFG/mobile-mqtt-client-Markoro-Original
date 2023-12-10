@@ -7,67 +7,75 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textViewTopic"
+        android:id="@+id/textViewTopic2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="64dp"
-        android:text="Topic:"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Unidade Térmica"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTopicName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewTopic"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="64dp"
-        android:text="Value:"
+        android:id="@+id/textViewTopic3"
+        android:layout_width="201dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="72dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Últimas 5 leituras Solo ou Ar"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTopic" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonPublish" />
 
     <EditText
         android:id="@+id/editTextValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.414"
         app:layout_constraintStart_toEndOf="@+id/textViewValue"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTopicName" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTopic2" />
 
     <Button
         android:id="@+id/buttonPublish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:onClick="publishMessage"
         android:text="Publish"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextValue" />
+
+    <TextView
+        android:id="@+id/textViewValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="104dp"
+        android:text="Unidade:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewTopicNameSub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="190dp"
-        android:text="Topic:"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="316dp"
+        android:text="solo ou ar:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewValue" />
 
@@ -76,34 +84,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textViewTopicNameSub"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPublish" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTopic3" />
 
     <Button
         android:id="@+id/buttonSubscribe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="8dp"
         android:onClick="sendSubscription"
         android:text="Subscribe"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTopicNameSub" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTopicNameSub"
+        app:layout_constraintVertical_bias="0.208" />
 
     <EditText
         android:id="@+id/editTextMultiLineSubMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSubscribe"
         tools:text="Subscribed message will appear here." />
